@@ -386,9 +386,9 @@ function createUnicodeGameTranscript() {
   console.assert(accumulator.length === 0)
 
   if (transcript.endsWith(greenSquare+greenSquare+greenSquare+greenSquare+greenSquare)) {
-    return "Birdle #" + (targetWords.indexOf(targetWord) + 1) + " " + usedRows + "/6\n" + transcript
+    return "Vogle #" + (targetWords.indexOf(targetWord) + 1) + " " + usedRows + "/6\n" + transcript
   } else {
-    return "Birdle #" + (targetWords.indexOf(targetWord) + 1) + " X/6\n" + transcript
+    return "Vogle #" + (targetWords.indexOf(targetWord) + 1) + " X/6\n" + transcript
   }
 }
 
