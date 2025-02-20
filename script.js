@@ -1,10 +1,4 @@
 const dictionary = [
-  // Singular bird names
-  // Latijnig
-  "hylia",
-  "buteo",
-
-
   // Normaal
   "cetti",
   "eider",
@@ -26,13 +20,12 @@ const dictionary = [
   "woerd",
   "zwaan",
 
-  // verklein
+  // verkleind
   "alkje",
   "bokje",
   "hopje",
   "kipje",
   "musje",
-  "sysje",
 
   // meervoud
   "alken",
@@ -46,7 +39,6 @@ const dictionary = [
   "mezen",
   "raven",
   "skuas",
-  "syzen",
   "toeis",
   "uilen",
   "wekas",
@@ -125,7 +117,6 @@ const targetWords = [
   "eider",
   "fitis",
   "griel",
-  "harpy",
   "havik",
   "jager",
   "kloek",
