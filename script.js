@@ -4,7 +4,6 @@ const dictionary = [
   "eider",
   "fitis",
   "griel",
-  "harpy",
   "havik",
   "jager",
   "kloek",
@@ -114,7 +113,9 @@ const dictionary = [
 ]
 
 const targetWords = [
+  "cetti",
   "eider",
+  "bokje",
   "fitis",
   "griel",
   "havik",
@@ -125,43 +126,50 @@ const targetWords = [
   "kriel",
   "meeuw",
   "merel",
+  "musje",
   "noddy",
   "oehoe",
   "kraai",
   "stern",
   "woerd",
   "zwaan",
+  "hanen",
+  "kepen",
+  "kiwis",
+  "mezen",
+  "raven",
+  "uilen",
 ]
 
-const WORD_LENGTH = 5
-const FLIP_ANIMATION_DURATION = 500
-const DANCE_ANIMATION_DURATION = 1000
-const keyboard = document.querySelector("[data-keyboard]")
-const alertContainer = document.querySelector("[data-alert-container]")
-const guessGrid = document.querySelector("[data-guess-grid]")
-const offsetFromDate = new Date(2022, 0, 1)
-const msOffset = Date.now() - offsetFromDate
-const dayOffset = msOffset / 1000 / 60 / 60 / 24
-const queryParams = new URLSearchParams(window.location.search)
+const WORD_LENGTH = 5;
+const FLIP_ANIMATION_DURATION = 500;
+const DANCE_ANIMATION_DURATION = 1000;
+const keyboard = document.querySelector("[data-keyboard]");
+const alertContainer = document.querySelector("[data-alert-container]");
+const guessGrid = document.querySelector("[data-guess-grid]");
+const offsetFromDate = new Date(2022, 0, 1);
+const msOffset = Date.now() - offsetFromDate;
+const dayOffset = msOffset / 1000 / 60 / 60 / 24;
+const queryParams = new URLSearchParams(window.location.search);
 const targetWord = queryParams.has('random') ? targetWords[Math.floor(Math.random() * targetWords.length)]
-                                             : targetWords[Math.floor(dayOffset) % targetWords.length]
-let gameOver = false
+                                             : targetWords[Math.floor(dayOffset) % targetWords.length];
+let gameOver = false;
 
-restoreSettings()
-startInteraction()
+restoreSettings();
+startInteraction();
 
 function startInteraction() {
-  document.addEventListener("click", handleMouseClick)
-  document.addEventListener("keydown", handleKeyPress)
+  document.addEventListener("click", handleMouseClick);
+  document.addEventListener("keydown", handleKeyPress);
 }
 
 function stopInteraction() {
-  document.removeEventListener("click", handleMouseClick)
-  document.removeEventListener("keydown", handleKeyPress)
+  document.removeEventListener("click", handleMouseClick);
+  document.removeEventListener("keydown", handleKeyPress);
 }
 
 function acceptGameInput() {
-  return (document.getElementById("help-modal").hidden && document.getElementById("settings-modal").hidden && !window.gameOver)
+  return (document.getElementById("help-modal").hidden && document.getElementById("settings-modal").hidden && !window.gameOver);
 }
 
 function handleMouseClick(e) {
@@ -247,16 +255,21 @@ function deleteKey() {
 }
 
 function submitGuess() {
-  const activeTiles = [...getActiveTiles()]
+  const activeTiles = [...getActiveTiles()];
+
   if (activeTiles.length !== WORD_LENGTH) {
-    showAlert("Not enough letters")
-    shakeTiles(activeTiles)
+    showAlert("Not enough letters");
+    shakeTiles(activeTiles);
     return
   }
 
   const guess = activeTiles.reduce((word, tile) => {
     return word + tile.dataset.letter
   }, "")
+
+  if (guess === 'arjan') {
+    document.body.style.background = "url('arjan.jpg') no-repeat";
+  }
 
   if (!targetWords.includes(guess) && !dictionary.includes(guess)) {
     showAlert("Not in bird list")
