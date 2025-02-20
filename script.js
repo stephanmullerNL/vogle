@@ -1,5 +1,6 @@
 const dictionary = [
   // Normaal
+  "arend",
   "cetti",
   "eider",
   "fitis",
@@ -47,7 +48,6 @@ const dictionary = [
   "akepa",
   "amadi",
   "arara",
-  "arend",
   "bacha",
   "banda",
   "bebek",
@@ -109,36 +109,34 @@ const dictionary = [
   // Algemene namen
   "vogel",
   "stelt",
-
 ]
 
 const targetWords = [
-  "cetti",
+  "arend",
   "eider",
   "bokje",
+  "stern",
+  "hanen",
   "fitis",
+  "kraai",
   "griel",
+  "uilen",
   "havik",
   "jager",
-  "kloek",
   "kluut",
-  "kraan",
   "kriel",
+  "zwaan",
   "meeuw",
-  "merel",
   "musje",
+  "kloek",
   "noddy",
   "oehoe",
-  "kraai",
-  "stern",
   "woerd",
-  "zwaan",
-  "hanen",
+  "merel",
   "kepen",
   "kiwis",
   "mezen",
   "raven",
-  "uilen",
 ]
 
 const WORD_LENGTH = 5;
@@ -400,7 +398,7 @@ function checkWinLose(guess, tiles) {
 
   if (guess === targetWord) {
     stopInteraction()
-    const compliments = ["Genius", "Magnificent", "Impressive", "Splendid", "Great", "Phew"]
+    const compliments = ["Geniaal", "Geweldig", "Indrukwekkend", "Toppie", "Netjes", "Net op tijd"]
     showAlert(compliments[usedRows - 1], 5000)
     danceTiles(tiles)
   } else if (remainingRows === 0) {
