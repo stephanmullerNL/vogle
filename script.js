@@ -112,6 +112,9 @@ const dictionary = [
 ]
 
 const targetWords = [
+  "kiwis",
+  "mezen",
+  "raven",
   "arend",
   "eider",
   "bokje",
@@ -132,11 +135,7 @@ const targetWords = [
   "noddy",
   "oehoe",
   "woerd",
-  "kepen",
   "merel",
-  "kiwis",
-  "mezen",
-  "raven",
 ]
 
 const WORD_LENGTH = 5;
