@@ -265,7 +265,7 @@ function submitGuess() {
   }, "")
 
   if (guess === 'arjan') {
-    document.body.style.background = "url('arjan.jpg') no-repeat";
+    document.body.style.backgroundImage = "url('arjan.jpg')";
   }
 
   if (!targetWords.includes(guess) && !dictionary.includes(guess)) {

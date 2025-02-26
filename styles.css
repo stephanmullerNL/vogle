@@ -87,6 +87,8 @@
         background-color: var(--color-background);
         margin: 0;
         padding: 0;
+        background-position: center;
+        background-repeat: no-repeat;
         /* Prevent scrollbar appearing on page transition */
         overflow-y: hidden;
       }
